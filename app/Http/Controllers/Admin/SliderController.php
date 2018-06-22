@@ -26,7 +26,7 @@ class SliderController extends Controller
         $this->validate($request, [
             'title' => 'required',
             'sub_title' => 'required',
-            'image' => 'required|mimes:jpeg,jpg,png,bmp,png',
+            'image' => 'required|mimes:jpeg,jpg,png,bmp',
         ]);
         $image = $request->file('image');
         $slug = str_slug($request->title);
@@ -63,7 +63,7 @@ class SliderController extends Controller
         $this->validate($request, [
             'title' => 'required',
             'sub_title' => 'required',
-            'image' => 'mimes:jpeg,jpg,png,bmp,png',
+            'image' => 'mimes:jpeg,jpg,png,bmp',
         ]);
         $image = $request->file('image');
         $slug = str_slug($request->title);
@@ -75,6 +75,8 @@ class SliderController extends Controller
             if (!file_exists('uploads/sliders')) {
                 mkdir('uploads/sliders', '0777', true);
             }
+
+            unlink('uploads/sliders/' . $slider->image);
             $image->move('uploads/sliders', $imageName);
         } else {
             $imageName = $slider->image;

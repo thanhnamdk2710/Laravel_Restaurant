@@ -8,4 +8,5 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth', 'namespace' => 'admin
     Route::get('dashboard', 'DashboardController@index')->name('admin.dashboard');
     Route::resource('sliders', 'SliderController');
     Route::resource('categories', 'CategoryController');
+    Route::resource('items', 'ItemController');
 });
