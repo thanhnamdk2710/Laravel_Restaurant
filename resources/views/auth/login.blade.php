@@ -21,9 +21,11 @@
 <div id="app">
     <div class="container-fluid">
         <div class="row justify-content-center">
-            <div class="col-md-8 auth">
+            <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('Login') }}</div>
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title ">{{ __('Login') }}</h4>
+                    </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
                             @csrf

@@ -6,16 +6,16 @@
     </div>
     <div class="sidebar-wrapper">
         <ul class="nav">
-            <li class="nav-item active  ">
-                <a class="nav-link" href="./dashboard.html">
+            <li class="nav-item {{ Request::is('admin/dashboard') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('admin.dashboard') }}">
                     <i class="material-icons">dashboard</i>
                     <p>Dashboard</p>
                 </a>
             </li>
-            <li class="nav-item ">
-                <a class="nav-link" href="./user.html">
-                    <i class="material-icons">person</i>
-                    <p>User Profile</p>
+            <li class="nav-item {{ Request::is('admin/sliders*') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('sliders.index') }}">
+                    <i class="material-icons">slideshow</i>
+                    <p>Sliders</p>
                 </a>
             </li>
             <li class="nav-item ">
@@ -48,12 +48,6 @@
                     <p>Notifications</p>
                 </a>
             </li>
-            <!-- <li class="nav-item active-pro ">
-                  <a class="nav-link" href="./upgrade.html">
-                      <i class="material-icons">unarchive</i>
-                      <p>Upgrade to PRO</p>
-                  </a>
-              </li> -->
         </ul>
     </div>
 </div>
