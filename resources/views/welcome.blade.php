@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="shortcut icon" href="images/star.png" type="favicon/ico" /> -->
 
     <title>Mamma's Kitchen</title>
 
@@ -16,6 +15,15 @@
     <link rel="stylesheet" href="{{ asset('frontend/css/flexslider.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/pricing.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/main.css') }}">
+    <style>
+        @foreach($sliders as $key => $slider)
+            .owl-carousel .owl-wrapper, .owl-carousel .owl-item:nth-child({{ $key + 1 }}) .item
+            {
+                background: url('{{ asset('uploads/sliders/' . $slider->image) }}');
+                background-size: cover;
+            }
+        @endforeach
+    </style>
 
     <script src="{{ asset('frontend/js/jquery-1.11.2.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('frontend/js/jquery.flexslider.min.js') }}"></script>
@@ -27,37 +35,11 @@
             });
         });
     </script>
-
-    <script src="https://maps.googleapis.com/maps/api/js"></script>
-    <script>
-        function initialize() {
-            var mapCanvas = document.getElementById('map-canvas');
-            var mapOptions = {
-                center: new google.maps.LatLng(24.909439, 91.833800),
-                zoom: 16,
-                scrollwheel: false,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-            }
-            var map = new google.maps.Map(mapCanvas, mapOptions)
-
-            var marker = new google.maps.Marker({
-                position: new google.maps.LatLng(24.909439, 91.833800),
-                title:"Mamma's Kitchen Restaurant"
-            });
-
-            // To add the marker to the map, call setMap();
-            marker.setMap(map);
-        }
-        google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
-
 </head>
 <body data-spy="scroll" data-target="#template-navbar">
 
-<!--== 4. Navigation ==-->
 <nav id="template-navbar" class="navbar navbar-default custom-navbar-default navbar-fixed-top">
     <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#Food-fair-toggle">
                 <span class="sr-only">Toggle navigation</span>
@@ -70,7 +52,6 @@
             </a>
         </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="Food-fair-toggle">
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#about">about</a></li>
@@ -81,39 +62,23 @@
                 <li><a href="#reserve">reservation</a></li>
                 <li><a href="#contact">contact</a></li>
             </ul>
-        </div><!-- /.navbar-collapse -->
-    </div><!-- /.row -->
+        </div>
+    </div>
 </nav>
 
-<!--== 5. Header ==-->
 <section id="header-slider" class="owl-carousel">
-    <div class="item">
-        <div class="container">
-            <div class="header-content">
-                <h1 class="header-title">BEST FOOD</h1>
-                <p class="header-sub-title">create your own slogan</p>
-            </div> <!-- /.header-content -->
+    @foreach($sliders as $slider)
+        <div class="item">
+            <div class="container">
+                <div class="header-content">
+                    <h1 class="header-title">{{ $slider->title }}</h1>
+                    <p class="header-sub-title">{{ $slider->sub_title }}</p>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="item">
-        <div class="container">
-            <div class="header-content">
-                <h1 class="header-title">BEST SNACKS</h1>
-                <p class="header-sub-title">create your own slogan</p>
-            </div> <!-- /.header-content -->
-        </div>
-    </div>
-    <div class="item">
-        <div class="container">
-            <div class="header-content text-right pull-right">
-                <h1 class="header-title">BEST DRINKS</h1>
-                <p class="header-sub-title">create your own slogan</p>
-            </div> <!-- /.header-content -->
-        </div>
-    </div>
+    @endforeach
 </section>
 
-<!--== 6. About us ==-->
 <section id="about" class="about">
     <img src="{{ asset('frontend/images/icons/about_color.png') }}" class="img-responsive section-icon hidden-sm hidden-xs">
     <div class="wrapper">
@@ -131,14 +96,13 @@
                         <p class="section-content-para">
                             beautiful, warm, living object looked so fragile, so delicate, that if you touched it with a finger it would crumble and fall apart. Seeing this has to change a man.  Where ignorance lurks, so too do the frontiers of discovery and imagination.
                         </p>
-                    </div> <!-- /.section-content -->
+                    </div>
                 </div>
-            </div> <!-- /.row -->
-        </div> <!-- /.container-fluid -->
-    </div> <!-- /.wrapper -->
-</section> <!-- /#about -->
+            </div>
+        </div>
+    </div>
+</section>
 
-<!--==  7. Afordable Pricing  ==-->
 <section id="pricing" class="pricing">
     <div id="w">
         <div class="pricing-filter">
@@ -154,7 +118,7 @@
                                     <li class="filter" data-filter=".special">Special</li>
                                     <li class="filter" data-filter=".desert">Desert</li>
                                     <li class="filter" data-filter=".dinner">Dinner</li>
-                                </ul><!-- @end #filter-list -->
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -171,10 +135,10 @@
                             <a href="#">
                                 <img src="{{ asset('frontend/images/food1.jpg') }}" class="img-responsive" alt="Food" >
                                 <div class="menu-desc text-center">
-                                            <span>
-                                                <h3>Tomato Curry</h3>
-                                                Natalie &amp; Justin Cleaning by Justin Younger
-                                            </span>
+                                    <span>
+                                        <h3>Tomato Curry</h3>
+                                        Natalie &amp; Justin Cleaning by Justin Younger
+                                    </span>
                                 </div>
                             </a>
 
@@ -307,7 +271,6 @@
 </section>
 
 
-<!--== 8. Great Place to enjoy ==-->
 <section id="great-place-to-enjoy" class="great-place-to-enjoy">
     <img class="img-responsive section-icon hidden-sm hidden-xs" src="{{ asset('frontend/images/icons/beer_black.png') }}">
     <div class="wrapper">
@@ -324,9 +287,6 @@
     </div> <!-- /.wrapper -->
 </section> <!-- /#great-place-to-enjoy -->
 
-
-
-<!--==  9. Our Beer  ==-->
 <section id="beer" class="beer">
     <img class="img-responsive section-icon hidden-sm hidden-xs" src="{{ asset('frontend/images/icons/beer_color.png') }}">
     <div class="container-fluid">
@@ -352,7 +312,6 @@
     </div>
 </section>
 
-<!--== 10. Our Breakfast Menu ==-->
 <section id="breakfast" class="breakfast">
     <img class="img-responsive section-icon hidden-sm hidden-xs" src="{{ asset('frontend/images/icons/bread_black.png') }}">
     <div class="wrapper">
@@ -369,7 +328,6 @@
     </div> <!-- /.wrapper -->
 </section> <!-- /#breakfast -->
 
-<!--== 11. Our Bread ==-->
 <section id="bread" class="bread">
     <img class="img-responsive section-icon hidden-sm hidden-xs" src="{{ asset('frontend/images/icons/bread_color.png') }}">
     <div class="container-fluid">
@@ -396,7 +354,6 @@
     </div>
 </section>
 
-<!--== 12. Our Featured Dishes Menu ==-->
 <section id="featured-dish" class="featured-dish">
     <img class="img-responsive section-icon hidden-sm hidden-xs" src="{{ asset('frontend/images/icons/food_black.png') }}">
     <div class="wrapper">
@@ -413,7 +370,6 @@
     </div> <!-- /.wrapper -->
 </section> <!-- /#featured-dish -->
 
-<!--== 13. Menu List ==-->
 <section id="menu-list" class="menu-list">
     <div class="container">
         <div class="row menu">
