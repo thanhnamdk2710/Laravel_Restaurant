@@ -6,6 +6,7 @@ use App\Slider;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Brian2694\Toastr\Facades\Toastr;
 
 class SliderController extends Controller
 {
@@ -47,8 +48,9 @@ class SliderController extends Controller
         $slider->sub_title = $request->sub_title;
         $slider->image = $imageName;
         $slider->save();
+        Toastr::success('Add New Slider Successfully!', 'Success', ["positionClass" => "toast-top-right"]);
 
-        return redirect()->route('sliders.index')->with('successMsg', 'Add New Slider Successfully!');
+        return redirect()->route('sliders.index');
     }
 
     public function edit($id)
@@ -86,8 +88,9 @@ class SliderController extends Controller
         $slider->sub_title = $request->sub_title;
         $slider->image = $imageName;
         $slider->save();
+        Toastr::success('Updated Slider Successfully!', 'Success', ["positionClass" => "toast-top-right"]);
 
-        return redirect()->route('sliders.index')->with('successMsg', 'Updated Slider Successfully!');
+        return redirect()->route('sliders.index');
     }
 
     public function destroy($id)
@@ -99,7 +102,8 @@ class SliderController extends Controller
         }
 
         $slider->delete();
+        Toastr::success('Deleted Slider Successfully!', 'Success', ["positionClass" => "toast-top-right"]);
 
-        return redirect()->route('sliders.index')->with('successMsg', 'Deleted Slider Successfully!');
+        return redirect()->back();
     }
 }

@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="{{ asset('frontend/css/flexslider.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/pricing.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap-datetimepicker.min.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <style>
         @foreach($sliders as $key => $slider)
             .owl-carousel .owl-wrapper, .owl-carousel .owl-item:nth-child({{ $key + 1 }}) .item
@@ -41,7 +43,8 @@
 <nav id="template-navbar" class="navbar navbar-default custom-navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#Food-fair-toggle">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#Food-fair-toggle">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -80,7 +83,8 @@
 </section>
 
 <section id="about" class="about">
-    <img src="{{ asset('frontend/images/icons/about_color.png') }}" class="img-responsive section-icon hidden-sm hidden-xs">
+    <img src="{{ asset('frontend/images/icons/about_color.png') }}"
+         class="img-responsive section-icon hidden-sm hidden-xs">
     <div class="wrapper">
         <div class="container-fluid">
             <div class="row dis-table">
@@ -91,10 +95,14 @@
                     <div class="section-content">
                         <h2 class="section-content-title">About us</h2>
                         <p class="section-content-para">
-                            Astronomy compels the soul to look upward, and leads us from this world to another.  Curious that we spend more time congratulating people who have succeeded than encouraging people who have not. As we got further and further away, it [the Earth] diminished in size.
+                            Astronomy compels the soul to look upward, and leads us from this world to another.
+                            Curious that we spend more time congratulating people who have succeeded than encouraging
+                            people who have not. As we got further and further away, it [the Earth] diminished in size.
                         </p>
                         <p class="section-content-para">
-                            beautiful, warm, living object looked so fragile, so delicate, that if you touched it with a finger it would crumble and fall apart. Seeing this has to change a man.  Where ignorance lurks, so too do the frontiers of discovery and imagination.
+                            beautiful, warm, living object looked so fragile, so delicate, that if you touched it
+                            with a finger it would crumble and fall apart. Seeing this has to change a man.  Where
+                            ignorance lurks, so too do the frontiers of discovery and imagination.
                         </p>
                     </div>
                 </div>
@@ -150,7 +158,9 @@
                     </ul>
 
                     <!-- <div class="text-center">
-                            <a id="loadPricingContent" class="btn btn-middle hidden-sm hidden-xs">Load More <span class="caret"></span></a>
+                            <a id="loadPricingContent" class="btn btn-middle hidden-sm hidden-xs">
+                                Load More <span class="caret"></span>
+                            </a>
                     </div> -->
 
                 </div>
@@ -162,7 +172,8 @@
 
 
 <section id="great-place-to-enjoy" class="great-place-to-enjoy">
-    <img class="img-responsive section-icon hidden-sm hidden-xs" src="{{ asset('frontend/images/icons/beer_black.png') }}">
+    <img class="img-responsive section-icon hidden-sm hidden-xs"
+         src="{{ asset('frontend/images/icons/beer_black.png') }}">
     <div class="wrapper">
         <div class="container-fluid">
             <div class="row dis-table">
@@ -178,7 +189,8 @@
 </section> <!-- /#great-place-to-enjoy -->
 
 <section id="beer" class="beer">
-    <img class="img-responsive section-icon hidden-sm hidden-xs" src="{{ asset('frontend/images/icons/beer_color.png') }}">
+    <img class="img-responsive section-icon hidden-sm hidden-xs"
+         src="{{ asset('frontend/images/icons/beer_color.png') }}">
     <div class="container-fluid">
         <div class="row dis-table">
             <div class="hidden-xs col-sm-6 dis-table-cell section-bg">
@@ -190,10 +202,18 @@
                     <h2 class="section-content-title">Our Beer</h2>
                     <div class="section-description">
                         <p class="section-content-para">
-                            Astronomy compels the soul to look upward, and leads us from this world to another.  Curious that we spend more time congratulating people who have succeeded than encouraging people who have not. As we got further and further away, it [the Earth] diminished in size.
+                            Astronomy compels the soul to look upward, and leads us from this world to another.
+                            Curious that we spend more time congratulating people who have succeeded than encouraging
+                            people who have not. As we got further and further away, it [the Earth] diminished
+                            in size.
                         </p>
                         <p class="section-content-para">
-                            beautiful, warm, living object looked so fragile, so delicate, that if you touched it with a finger it would crumble and fall apart. Seeing this has to change a man.  Where ignorance lurks, so too do the frontiers of discovery and imagination.Astronomy compels the soul to look upward, and leads us from this world to another.  Curious that we spend more time congratulating people who have succeeded than encouraging people who have not. As we got further and further away, it [the Earth] diminished in size.
+                            beautiful, warm, living object looked so fragile, so delicate, that if you touched it
+                            with a finger it would crumble and fall apart. Seeing this has to change a man.
+                            Where ignorance lurks, so too do the frontiers of discovery and imagination.Astronomy
+                            compels the soul to look upward, and leads us from this world to another.  Curious that
+                            we spend more time congratulating people who have succeeded than encouraging people who
+                            have not. As we got further and further away, it [the Earth] diminished in size.
                         </p>
                     </div>
                 </div>
@@ -203,7 +223,8 @@
 </section>
 
 <section id="breakfast" class="breakfast">
-    <img class="img-responsive section-icon hidden-sm hidden-xs" src="{{ asset('frontend/images/icons/bread_black.png') }}">
+    <img class="img-responsive section-icon hidden-sm hidden-xs"
+         src="{{ asset('frontend/images/icons/bread_black.png') }}">
     <div class="wrapper">
         <div class="container-fluid">
             <div class="row dis-table">
@@ -219,7 +240,8 @@
 </section> <!-- /#breakfast -->
 
 <section id="bread" class="bread">
-    <img class="img-responsive section-icon hidden-sm hidden-xs" src="{{ asset('frontend/images/icons/bread_color.png') }}">
+    <img class="img-responsive section-icon hidden-sm hidden-xs"
+         src="{{ asset('frontend/images/icons/bread_color.png') }}">
     <div class="container-fluid">
         <div class="row dis-table">
             <div class="hidden-xs col-sm-6 dis-table-cell section-bg">
@@ -232,10 +254,15 @@
                     </h2>
                     <div class="section-description">
                         <p class="section-content-para">
-                            Astronomy compels the soul to look upward, and leads us from this world to another.  Curious that we spend more time congratulating people who have succeeded than encouraging people who have not. As we got further and further away, it [the Earth] diminished in size.
+                            Astronomy compels the soul to look upward, and leads us from this world to another.
+                            Curious that we spend more time congratulating people who have succeeded than encouraging
+                            people who have not. As we got further and further away, it [the Earth] diminished
+                            in size.
                         </p>
                         <p class="section-content-para">
-                            beautiful, warm, living object looked so fragile, so delicate, that if you touched it with a finger it would crumble and fall apart. Seeing this has to change a man.  Where ignorance lurks, so too do the frontiers of discovery and imagination.
+                            beautiful, warm, living object looked so fragile, so delicate, that if you
+                            touched it with a finger it would crumble and fall apart. Seeing this has to change a man.
+                            Where ignorance lurks, so too do the frontiers of discovery and imagination.
                         </p>
                     </div>
                 </div>
@@ -245,7 +272,8 @@
 </section>
 
 <section id="featured-dish" class="featured-dish">
-    <img class="img-responsive section-icon hidden-sm hidden-xs" src="{{ asset('frontend/images/icons/food_black.png') }}">
+    <img class="img-responsive section-icon hidden-sm hidden-xs"
+         src="{{ asset('frontend/images/icons/food_black.png') }}">
     <div class="wrapper">
         <div class="container-fluid">
             <div class="row dis-table">
@@ -504,7 +532,9 @@
 
                 <div id="moreMenuContent"></div>
                 <div class="text-center">
-                    <a id="loadMenuContent" class="btn btn-middle hidden-sm hidden-xs">Load More <span class="caret"></span></a>
+                    <a id="loadMenuContent" class="btn btn-middle hidden-sm hidden-xs">
+                        Load More <span class="caret"></span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -514,7 +544,8 @@
 <!--== 14. Have a look to our dishes ==-->
 
 <section id="have-a-look" class="have-a-look hidden-xs">
-    <img class="img-responsive section-icon hidden-sm hidden-xs" src="{{ asset('frontend/images/icons/food_color.png') }}">
+    <img class="img-responsive section-icon hidden-sm hidden-xs"
+         src="{{ asset('frontend/images/icons/food_color.png') }}">
     <div class="wrapper">
         <div class="container-fluid">
             <div class="row">
@@ -571,7 +602,8 @@
 
 <!--== 15. Reserve A Table! ==-->
 <section id="reserve" class="reserve">
-    <img class="img-responsive section-icon hidden-sm hidden-xs" src="{{ asset('frontend/images/icons/reserve_black.png') }}">
+    <img class="img-responsive section-icon hidden-sm hidden-xs"
+         src="{{ asset('frontend/images/icons/reserve_black.png') }}">
     <div class="wrapper">
         <div class="container-fluid">
             <div class="row dis-table">
@@ -587,34 +619,43 @@
 </section> <!-- /#reserve -->
 
 <section class="reservation">
-    <img class="img-responsive section-icon hidden-sm hidden-xs" src="{{ asset('frontend/images/icons/reserve_color.png') }}">
+    <img class="img-responsive section-icon hidden-sm hidden-xs"
+         src="{{ asset('frontend/images/icons/reserve_color.png') }}">
     <div class="wrapper">
         <div class="container-fluid">
             <div class=" section-content">
                 <div class="row">
                     <div class="col-md-5 col-sm-6">
-                        <form class="reservation-form" method="post" action="reserve.php">
+                        <form class="reservation-form" method="post" action="{{ route('reservation') }}">
+                            @csrf
                             <div class="row">
                                 <div class="col-md-6 col-sm-6">
                                     <div class="form-group">
-                                        <input type="text" class="form-control reserve-form empty iconified" name="name" id="name" required="required" placeholder="  &#xf007;  Name">
+                                        <input type="text" class="form-control reserve-form empty iconified"
+                                               name="name" id="name" placeholder="  &#xf007;  Name">
                                     </div>
                                     <div class="form-group">
-                                        <input type="email" name="email" class="form-control reserve-form empty iconified" id="email" required="required" placeholder="  &#xf1d8;  e-mail">
+                                        <input type="email" name="email"
+                                               class="form-control reserve-form empty iconified" id="email"
+                                               placeholder="  &#xf1d8;  e-mail">
                                     </div>
                                 </div>
 
                                 <div class="col-md-6 col-sm-6">
                                     <div class="form-group">
-                                        <input type="tel" class="form-control reserve-form empty iconified" name="phone" id="phone" required="required" placeholder="  &#xf095;  Phone">
+                                        <input type="tel" class="form-control reserve-form empty iconified"
+                                               name="phone" id="phone" placeholder="  &#xf095;  Phone">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control reserve-form empty iconified" name="datepicker" id="datepicker" required="required" placeholder="&#xf017;  Time">
+                                        <input type="text" class="form-control reserve-form empty iconified"
+                                               name="dateandtime" id="datetimepicker" placeholder="&#xf017;  Time">
                                     </div>
                                 </div>
 
                                 <div class="col-md-12 col-sm-12">
-                                    <textarea type="text" name="message" class="form-control reserve-form empty iconified" id="message" rows="3" required="required" placeholder="  &#xf086;  We're listening"></textarea>
+                                    <textarea type="text" name="message"
+                                              class="form-control reserve-form empty iconified" id="message" rows="3"
+                                              placeholder="  &#xf086;  We're listening"></textarea>
                                 </div>
 
                                 <div class="col-md-12 col-sm-12">
@@ -623,7 +664,6 @@
                                         Make a reservation
                                     </button>
                                 </div>
-
                             </div>
                         </form>
                     </div>
@@ -699,18 +739,22 @@
 
                         <div class="col-md-6 col-sm-6">
                             <div class="form-group">
-                                <input  name="name" type="text" class="form-control" id="name" required="required" placeholder="  Name">
+                                <input  name="name" type="text" class="form-control" id="name" required="required"
+                                        placeholder="  Name">
                             </div>
                             <div class="form-group">
-                                <input name="email" type="email" class="form-control" id="email" required="required" placeholder="  Email">
+                                <input name="email" type="email" class="form-control" id="email" required="required"
+                                       placeholder="  Email">
                             </div>
                             <div class="form-group">
-                                <input name="subject" type="text" class="form-control" id="subject" required="required" placeholder="  Subject">
+                                <input name="subject" type="text" class="form-control" id="subject" required="required"
+                                       placeholder="  Subject">
                             </div>
                         </div>
 
                         <div class="col-md-6 col-sm-6">
-                            <textarea name="message" type="text" class="form-control" id="message" rows="7" required="required" placeholder="  Message"></textarea>
+                            <textarea name="message" type="text" class="form-control" id="message" rows="7"
+                                      required="required" placeholder="  Message"></textarea>
                         </div>
 
                         <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3">
@@ -731,7 +775,9 @@
             <div class="col-md-6 col-md-offset-3">
                 <div class="copyright text-center">
                     <p>
-                        &copy; Copyright, 2015 <a href="#">Your Website Link.</a> Theme by <a href="http://themewagon.com/"  target="_blank">ThemeWagon</a>
+                        &copy; Copyright, 2015
+                        <a href="#">Your Website Link.</a> Theme by
+                        <a href="http://themewagon.com/"  target="_blank">ThemeWagon</a>
                     </p>
                 </div>
             </div>
@@ -747,5 +793,27 @@
 <script type="text/javascript" src="{{ asset('frontend/js/jquery.hoverdir.js') }}"></script>
 <script type="text/javascript" src="{{ asset('frontend/js/jQuery.scrollSpeed.js') }}"></script>
 <script src="{{ asset('frontend/js/script.js') }}"></script>
+<script src="{{ asset('frontend/js/bootstrap-datetimepicker.min.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+@if($errors->any())
+    @foreach($errors->all() as $error)
+        <script>
+            toastr.error('{{ $error }}');
+        </script>
+    @endforeach
+@endif
+
+<script type="text/javascript">
+    $(function () {
+       $('#datetimepicker').datetimepicker({
+           format: "dd MM yyyy - HH:11 P",
+           showMeridian: true,
+           autoclose: true,
+           todayBtn: true
+       });
+    });
+</script>
+{!! Toastr::message() !!}
 </body>
 </html>

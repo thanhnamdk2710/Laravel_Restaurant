@@ -11,8 +11,6 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    @include('layouts.partials.message')
-
                     <div class="card">
                         <div class="card-header card-header-primary">
                             <h4 class="card-title ">Edit Category</h4>
@@ -42,5 +40,5 @@
 @endsection
 
 @push('scripts')
-
+    @include('layouts.partials.message')
 @endpush
