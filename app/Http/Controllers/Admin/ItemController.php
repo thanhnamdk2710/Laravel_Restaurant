@@ -7,6 +7,7 @@ use App\Item;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Brian2694\Toastr\Facades\Toastr;
 
 class ItemController extends Controller
 {
@@ -57,8 +58,9 @@ class ItemController extends Controller
         $item->price = $request->price;
         $item->image = $imageName;
         $item->save();
+        Toastr::success('Add New Item Successfully!', 'Success', ["positionClass" => "toast-top-right"]);
 
-        return redirect()->route('items.index')->with('successMsg', 'Add New Item Successfully!');
+        return redirect()->route('items.index');
     }
 
     public function edit($id)
@@ -103,8 +105,9 @@ class ItemController extends Controller
         $item->price = $request->price;
         $item->image = $imageName;
         $item->save();
+        Toastr::success('Updated Item Successfully!', 'Success', ["positionClass" => "toast-top-right"]);
 
-        return redirect()->route('items.index')->with('successMsg', 'Updated Item Successfully!');
+        return redirect()->route('items.index');
     }
 
     public function destroy($id)
@@ -116,7 +119,8 @@ class ItemController extends Controller
         }
 
         $item->delete();
+        Toastr::success('Deleted Item Successfully!', 'Success', ["positionClass" => "toast-top-right"]);
 
-        return redirect()->route('items.index')->with('successMsg', 'Deleted Item Successfully!');
+        return redirect()->back();
     }
 }
