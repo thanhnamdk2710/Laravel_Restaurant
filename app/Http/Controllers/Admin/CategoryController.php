@@ -27,10 +27,10 @@ class CategoryController extends Controller
             'name' => 'required'
         ]);
 
-        $category = new Category();
-        $category->name = $request->name;
-        $category->slug = str_slug($request->name);
-        $category->save();
+        Category::create([
+            'name' => $request->name,
+            'slug' => str_slug($request->name)
+        ]);
         Toastr::success('Add New Category Successfully!', 'Success', ["positionClass" => "toast-top-right"]);
 
         return redirect()->route('categories.index');
@@ -49,10 +49,10 @@ class CategoryController extends Controller
             'name' => 'required'
         ]);
 
-        $category = Category::findOrFail($id);
-        $category->name = $request->name;
-        $category->slug = str_slug($request->name);
-        $category->save();
+        Category::findOrFail($id)->update([
+            'name' => $request->name,
+            'slug' => str_slug($request->name)
+        ]);
         Toastr::success('Updated Category Successfully!', 'Success', ["positionClass" => "toast-top-right"]);
 
         return redirect()->route('categories.index');
@@ -60,8 +60,7 @@ class CategoryController extends Controller
 
     public function destroy($id)
     {
-        $category = Category::findOrFail($id);
-        $category->delete();
+        Category::findOrFail($id)->delete();
         Toastr::success('Deleted Category Successfully!', 'Success', ["positionClass" => "toast-top-right"]);
 
         return redirect()->back();

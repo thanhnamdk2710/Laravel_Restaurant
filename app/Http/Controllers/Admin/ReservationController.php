@@ -17,17 +17,16 @@ class ReservationController extends Controller
 
     public function status($id)
     {
-        $reservation = Reservation::findOrFail($id);
-        $reservation->status = true;
-        $reservation->save();
+        Reservation::findOrFail($id)->update([
+            'status' => true
+        ]);
         Toastr::success('Reservation successfully confirmed!', 'Success', ["positionClass" => "toast-top-right"]);
 
         return redirect()->back();
     }
     public function destroy($id)
     {
-        $reservation = Reservation::findOrFail($id);
-        $reservation->delete();
+        Reservation::findOrFail($id)->delete();
         Toastr::success('Deleted reservation successfully!', 'Success', ["positionClass" => "toast-top-right"]);
 
         return redirect()->back();

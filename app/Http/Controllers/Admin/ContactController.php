@@ -24,9 +24,7 @@ class ContactController extends Controller
 
     public function destroy($id)
     {
-        $contact = Contact::findOrFail($id);
-        $contact->delete();
-
+        Contact::findOrFail($id)->delete();
         Toastr::success('Deleted contact message successfully!', 'Success', ["positionClass" => "toast-top-right"]);
 
         return redirect()->back();
