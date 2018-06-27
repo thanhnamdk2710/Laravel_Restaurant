@@ -24,7 +24,7 @@
                         <div class="card-footer">
                             <div class="stats">
                                 <i class="material-icons text-danger">info</i>
-                                <a href="#pablo">Total Categories and Items</a>
+                                <a href="{{ route('items.index') }}">Total Categories and Items</a>
                             </div>
                         </div>
                     </div>
